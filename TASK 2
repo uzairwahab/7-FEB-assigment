@@ -5,7 +5,21 @@ below-given password guidelines else it should return “Invalid Password”.
 Note: 1. The Password should contain at least two uppercase letters and at least two lowercase letters.
 2. The Password should contain at least a number and three special characters.
 3. The length of the password should be 10 characters long.
-ANS.
+ANS. 
+
+def check_password(password):
+    # Check length of password
+    if len(password) != 10:
+        return "Invalid Password"
+    # Check if password contains at least two uppercase letters and two lowercase letters
+    if not (re.search("[A-Z]{2,}", password) and re.search("[a-z]{2,}", password)):
+        return "Invalid Password"
+    # Check if password contains at least one number and three special characters
+    if not (re.search("\d", password) and re.search("[!@#$%^&*()_+-=[]{}|:;'<>,.?/]{3,}", password)):
+        return "Invalid Password"
+    # If all conditions are met, return "Valid Password"
+    return "Valid Password"
+
 
 
 
@@ -17,13 +31,35 @@ Q2. Solve the below-given questions using at least one of the following:
 3. Map function
 4. List Comprehension
 
-. Check if the string starts with a particular letterY
-. Check if the string is numericY
-. Sort a list of tuples having fruit names and their quantity. [("mango",99),("orange",80), ("grapes", 1000)-
-. Find the squares of numbers from 1 to 10Y
-. Find the cube root of numbers from 1 to 10Y
-. Check if a given number is evenY
+. Check if the string starts with a particular letter
+
+
+. Check if the string is numeric
+
+
+. Sort a list of tuples having fruit names and their quantity. [("mango",99),("orange",80), ("grapes", 1000)
+
+
+. Find the squares of numbers from 1 to 10
+ans. l = list(range(1,11))
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+def sq(x):
+    return x**2
+list(map(sq , l))
+
+. Find the cube root of numbers from 1 to 10
+
+Ans. l1 = list(range(1,11))
+     def cube(x):
+      return x**3
+
+list(map(cube, l1))
+[1, 8, 27, 64, 125, 216, 343, 512, 729, 1000] 
+
+
+. Check if a given number is even
 . Filter odd numbers from the given list.
-[1,2,3,4,5,6,7,8,9,10-
+[1,2,3,4,5,6,7,8,9,10]
 . Sort a list of integers into positive and negative integers lists.
 [1,2,3,4,5,6,-1,-2,-3,-4,-5,0]
