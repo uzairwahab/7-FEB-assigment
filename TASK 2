@@ -32,12 +32,15 @@ Q2. Solve the below-given questions using at least one of the following:
 4. List Comprehension
 
 . Check if the string starts with a particular letter
-
+ANS.The startsWith() method determines whether a string begins with the characters of a specified string, returning true or false as appropriate.
 
 . Check if the string is numeric
-
+ANS. The isnumeric() method returns True if all the characters are numeric (0-9), otherwise False. Exponents, like ² and ¾ are also considered to be numeric values.
 
 . Sort a list of tuples having fruit names and their quantity. [("mango",99),("orange",80), ("grapes", 1000)
+ANS. fruits = [("mango", 99), ("orange", 80), ("grapes", 1000)]
+sorted_fruits = sorted(fruits, key=lambda x: x[1])
+print(sorted_fruits)
 
 
 . Find the squares of numbers from 1 to 10
@@ -59,7 +62,38 @@ list(map(cube, l1))
 
 
 . Check if a given number is even
+ANS. def is_even(n):
+    if n % 2 == 0:
+        return True
+    else:
+        return False
+
+number = int(input("Enter a number: "))
+print(is_even(number))
+
+
 . Filter odd numbers from the given list.
 [1,2,3,4,5,6,7,8,9,10]
+ANS.list(filter(lambda x : x%3 == 0 ,l5))
+
+
 . Sort a list of integers into positive and negative integers lists.
 [1,2,3,4,5,6,-1,-2,-3,-4,-5,0]
+ANS.def sort_integers(input_list):
+    positive_list = []
+    negative_list = []
+    
+    for i in input_list:
+        if i > 0:
+            positive_list.append(i)
+        elif i < 0:
+            negative_list.append(i)
+    
+    return positive_list, negative_list
+
+input_list = [1, 2, 3, 4, 5, 6, -1, -2, -3, -4, -5, 0]
+positive_list, negative_list = sort_integers(input_list)
+
+print("Positive integers:", positive_list)
+print("Negative integers:", negative_list)
+ 
